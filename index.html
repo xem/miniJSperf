@@ -1,10 +1,17 @@
 <a href=//github.com/xem/miniJSperf><img style="position:absolute;top:0;right:0;border:0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-<center>
+<center style="font-family:arial">
 <h1>MiniJSperf</h1>
-<h3>A tiny JSperf clone</h3>
-<a href=golfed.html>Golfed version</a> (333b)
+<h3>A JSperf clone golfed by xem and p01, in 292b</h3>
 <br>
+<pre style="background:#def;padding:10px;font:normal 14px/14px courier;width:650px;margin:0 auto">
+&lt;body onload='for(i=5;i--;)f.innerHTML+="&lt;textarea id=_"+i+" rows=9>// "+
+"Results0teardown0#20#10setup".split(0)[i]'id=f>&lt;button onclick='for($=2;
+$--;eval(new Array(1e5).join(_4[v="value"]+(n=";\n")+top["_"+($+2)][v]+n+
+_1[v]+n)),_0.innerHTML+="\n#"+(2-$)+":"+(new Date-_)+"ms")_=new Date'>Run
+</pre>
+<a href=golfed.html style="display:block;width:650px;text-align:right">Try it</a>
 <br>
+<h3>Demo</h3>
 <textarea rows=5 id=t4>// Setup
 test = 1,2345678</textarea>
 <textarea rows=5 id=t3>// Snippet #1
@@ -18,18 +25,18 @@ delete test</textarea>
 <textarea rows=5 id=t0>Results</textarea>
 <br>
 <br>
-<button onclick=r()>Run 500,000 times [setup + snippet + teardown]
+<button onclick=r() title="Run 100,000 times [setup + snippet + teardown]">Run</button>
+<br>
 <script>
 r=function(){
   t0.innerHTML="Results";
   for($3=2;$3--;){
     $4=t4.value+";\n"+top["t"+($3+2)].value+";\n"+t1.value;
     $0=new Date;
-    for($1=5e5;$1--;){
+    for($1=1e5;$1--;){
       eval($4);
     }
-    t0.innerHTML+="\n#"+(2-$3)+":"+((new Date-$0)/1000)+"s";
+    t0.innerHTML+="\n#"+(2-$3)+":"+(new Date-$0)+"ms";
   }
 }
 </script>
-<style>body{font-family:arial}
